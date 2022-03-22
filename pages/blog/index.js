@@ -23,7 +23,7 @@ const Blog = ({ blogs }) => {
             <p className="prose mb-2 dark:prose-invert">
               {blog.fields.description}
             </p>
-            <Link href={`/blog/${blog.fields.slug}`}>
+            <Link href={`/blog/${blog.fields.slug}`} passHref>
               <button className="bg-indigo-500 hover:bg-indigo-800 p-1 rounded text-white">
                 Read Essay
               </button>
