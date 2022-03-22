@@ -20,7 +20,9 @@ const Blog = ({ blogs }) => {
         {blogs.map((blog) => (
           <div key={blog.sys.id} className="mt-8">
             <h4 className="text-xl font-bold">{blog.fields.title}</h4>
-            <p className="prose mb-2">{blog.fields.description}</p>
+            <p className="prose mb-2 dark:prose-invert">
+              {blog.fields.description}
+            </p>
             <Link href={`/blog/${blog.fields.slug}`}>
               <a>Read Essay</a>
             </Link>
