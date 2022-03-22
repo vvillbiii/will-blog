@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "../../components/Layout";
 import * as contentful from "contentful";
+import Link from "next/link";
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -20,7 +21,9 @@ const Blog = ({ blogs }) => {
           <div key={blog.sys.id} className="mt-8">
             <h4 className="text-xl font-bold">{blog.fields.title}</h4>
             <p>{blog.fields.description}</p>
-            <button>Read Essay</button>
+            <Link href={`/blog/${blog.fields.slug}`}>
+              <a>Read Essay</a>
+            </Link>
           </div>
         ))}
       </main>
@@ -35,7 +38,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      blogs,
+      blogs: blog.items,
     },
   };
 }
