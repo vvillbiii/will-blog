@@ -15,7 +15,7 @@ const BlogDetails = ({ blogs }) => {
         <title> {blogs.fields.title} | Will Bowles</title>
         <meta name="description" content={blogs.fields.description} />
       </Head>
-      <main className="h-screen">
+      <main>
         <h1 className="text-3xl font-bold mt-4">{blogs.fields.title}</h1>
         <div className="post-body my-5 prose prose-lg dark:prose-invert">
           {documentToReactComponents(blogs.fields.essay)}
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true, // false or 'blocking'
+    fallback: false, // true or 'blocking'
   };
 }
 

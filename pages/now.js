@@ -8,7 +8,7 @@ const Now = () => {
         <title>What I'm Doing Now | Will Bowles</title>
         <meta name="description" content="What I'm doing now" />
       </Head>
-      <main className="h-screen">
+      <main>
         <h1 className="text-3xl font-bold">What I am doing now.</h1>
         <div className=" text-lg">
           <p className="mt-5">

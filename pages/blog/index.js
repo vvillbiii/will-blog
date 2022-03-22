@@ -15,7 +15,7 @@ const Blog = ({ blogs }) => {
         <title>Essays | Will Bowles</title>
         <meta name="description" content="Essays" />
       </Head>
-      <main className="h-screen">
+      <main>
         <h1 className="text-3xl font-bold">Essays</h1>
         {blogs.map((blog) => (
           <div key={blog.sys.id} className="mt-8">

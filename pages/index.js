@@ -10,7 +10,7 @@ export default function Home() {
           <meta name="description" content="Homepage" />
         </Head>
 
-        <main className="h-screen">
+        <main>
           <h1 className="text-4xl font-bold mt-2">
             Hi, my name is Will. <br />I am a Software Engineer in New York
             City.
