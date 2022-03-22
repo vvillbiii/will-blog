@@ -16,8 +16,8 @@ const BlogDetails = ({ blogs }) => {
         <meta name="description" content={blogs.fields.description} />
       </Head>
       <main>
-        <h1 className="text-3xl font-bold">{blogs.fields.title}</h1>
-        <div className="post-body my-5">
+        <h1 className="text-3xl font-bold mt-4">{blogs.fields.title}</h1>
+        <div className="post-body my-5 prose prose-lg">
           {documentToReactComponents(blogs.fields.essay)}
         </div>
       </main>
