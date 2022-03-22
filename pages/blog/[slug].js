@@ -1,18 +1,56 @@
 import Head from "next/head";
 import Layout from "../../components/Layout";
+import * as contentful from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-const BlogDetails = () => {
+const client = contentful.createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+});
+
+const BlogDetails = ({ blogs }) => {
   return (
     <Layout>
       <Head>
-        <title>Essay title | Will Bowles</title>
-        <meta name="description" content="What I'm doing now" />
+        <title> {blogs.fields.title} | Will Bowles</title>
+        <meta name="description" content={blogs.fields.description} />
       </Head>
       <main>
-        <h1 className="text-3xl font-bold">Essay title</h1>
+        <h1 className="text-3xl font-bold">{blogs.fields.title}</h1>
+        <div className="post-body my-5">
+          {documentToReactComponents(blogs.fields.essay)}
+        </div>
       </main>
     </Layout>
   );
 };
 
 export default BlogDetails;
+
+export async function getStaticPaths() {
+  const allBlogs = await client.getEntries({ content_type: "blogPost" });
+
+  const paths = allBlogs.items.map((item) => {
+    return {
+      params: { slug: item.fields.slug },
+    };
+  });
+
+  return {
+    paths,
+    fallback: true, // false or 'blocking'
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const blog = await client.getEntries({
+    content_type: "blogPost",
+    "fields.slug": params.slug,
+  });
+
+  return {
+    props: {
+      blogs: blog.items[0],
+    },
+  };
+}
