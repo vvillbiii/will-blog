@@ -28,9 +28,9 @@ const Navbar = () => {
         }}
       >
         {theme === "light" ? (
-          <MoonIcon className="h-5 w-5 text-blue-500" />
+          <MoonIcon className="h-5 w-5 text-indigo-500" />
         ) : (
-          <SunIcon className="h-5 w-5 text-blue-500" />
+          <SunIcon className="h-5 w-5 text-indigo-500" />
         )}
       </button>
     </nav>

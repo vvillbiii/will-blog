@@ -24,7 +24,9 @@ const Blog = ({ blogs }) => {
               {blog.fields.description}
             </p>
             <Link href={`/blog/${blog.fields.slug}`}>
-              <a>Read Essay</a>
+              <button className="bg-indigo-500 hover:bg-indigo-800 p-1 rounded text-white">
+                Read Essay
+              </button>
             </Link>
           </div>
         ))}
