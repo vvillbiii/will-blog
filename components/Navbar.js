@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./navbar.module.css";
+import styles from "./Navbar.module.css";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/outline";
