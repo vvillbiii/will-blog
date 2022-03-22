@@ -15,7 +15,7 @@ const BlogDetails = ({ blogs }) => {
         <title> {blogs.fields.title} | Will Bowles</title>
         <meta name="description" content={blogs.fields.description} />
       </Head>
-      <main>
+      <main className="h-screen">
         <h1 className="text-3xl font-bold mt-4">{blogs.fields.title}</h1>
         <div className="post-body my-5 prose prose-lg dark:prose-invert">
           {documentToReactComponents(blogs.fields.essay)}
