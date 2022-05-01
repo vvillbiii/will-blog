@@ -13,7 +13,7 @@ export default function Home() {
         <main>
           <h1 className="text-4xl font-bold mt-2">
             Hi, my name is Will. <br />I am a Software Engineer in New York
-            City.
+            City. 👨🏾‍💻
           </h1>
           <p className="mt-3 text-lg">
             I worked in SEO, and digital marketing before becoming a software
