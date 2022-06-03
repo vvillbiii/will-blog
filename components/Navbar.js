@@ -23,6 +23,7 @@ const Navbar = () => {
         <a>Essays</a>
       </Link>
       <button
+        aria-label="light mode or dark mode icon"
         onClick={() => {
           setTheme(theme === "light" ? "dark" : "light");
         }}
