@@ -16,13 +16,25 @@ export default function Home() {
             City. 👨🏾‍💻
           </h1>
           <p className="mt-3 text-lg">
-            I worked in SEO, and digital marketing before becoming a software
-            engineer. Finding new ways to solve problems and learning new skills
-            are interests of mine. In addition to solving problems
-            independently, I value collaboration because there is more than one
-            way to achieve an answer, and everyone’s input is valuable. My
-            strengths are my attention to detail and my ability to meet
-            deadlines.
+            As a full-stack developer, I have a wide range of skills and
+            experience that I can bring to your company. I have experience with
+            both front-end and back-end development, as well as experience with
+            a variety of programming languages and frameworks such as
+            JavaScript, Python, React, and Next.
+          </p>
+          <p className="mt-3 text-lg">
+            Before becoming a full-stack developer I worked in SEO, and digital
+            marketing.
+          </p>
+          <p className="mt-3 text-lg">
+            I am a quick learner and have a knack for problem-solving, which
+            makes me an asset on any development team.
+          </p>
+          <p className="mt-3 text-lg">
+            In addition to solving problems independently, I value collaboration
+            because there is more than one way to achieve an answer, and
+            everyone’s input is valuable. My strengths are my attention to
+            detail and my ability to meet deadlines.
           </p>
         </main>
       </div>
