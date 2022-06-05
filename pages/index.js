@@ -7,7 +7,10 @@ export default function Home() {
       <div>
         <Head>
           <title>Will Bowles Software Engineer</title>
-          <meta name="description" content="Homepage" />
+          <meta
+            name="description"
+            content="Will Bowles website. New York City based software engineer. "
+          />
         </Head>
 
         <main>
