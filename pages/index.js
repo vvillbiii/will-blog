@@ -1,7 +1,10 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const site = "https://willbowles.co";
+  const canonicalURL = site + useRouter().pathname;
   return (
     <Layout>
       <div>
@@ -11,6 +14,7 @@ export default function Home() {
             name="description"
             content="Will Bowles website. New York City based software engineer. "
           />
+          <link rel="canonical" href={canonicalURL} />
         </Head>
 
         <main>

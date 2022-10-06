@@ -1,12 +1,16 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
+import { useRouter } from "next/router";
 
 const Now = () => {
+  const site = "https://willbowles.co";
+  const canonicalURL = site + useRouter().pathname;
   return (
     <Layout>
       <Head>
         <title>What I'm Doing Now | Will Bowles</title>
         <meta name="description" content="What I'm doing now" />
+        <link rel="canonical" href={canonicalURL} />
       </Head>
       <main>
         <h1 className="text-3xl font-bold">What I am doing now.</h1>

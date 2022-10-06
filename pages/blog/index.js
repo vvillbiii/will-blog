@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../../components/Layout";
 import * as contentful from "contentful";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -9,11 +10,14 @@ const client = contentful.createClient({
 });
 
 const Blog = ({ blogs }) => {
+  const site = "https://willbowles.co";
+  const canonicalURL = site + useRouter().pathname;
   return (
     <Layout>
       <Head>
         <title>Essays | Will Bowles</title>
         <meta name="description" content="Essays" />
+        <link rel="canonical" href={canonicalURL} />
       </Head>
       <main>
         <h1 className="text-3xl font-bold">Essays</h1>
