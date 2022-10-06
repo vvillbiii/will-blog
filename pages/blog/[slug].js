@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../../components/Layout";
 import * as contentful from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { useRouter } from "next/router";
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -9,11 +10,14 @@ const client = contentful.createClient({
 });
 
 const BlogDetails = ({ blogs }) => {
+  const site = "https://willbowles.co/blog";
+  const canonicalURL = site + useRouter().pathname;
   return (
     <Layout>
       <Head>
         <title> {blogs.fields.title} | Will Bowles</title>
         <meta name="description" content={blogs.fields.description} />
+        <link rel="canonical" href={canonicalURL} />
       </Head>
       <main>
         <h1 className="text-3xl font-bold mt-4">{blogs.fields.title}</h1>
