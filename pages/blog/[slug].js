@@ -2,7 +2,6 @@ import Head from "next/head";
 import Layout from "../../components/Layout";
 import * as contentful from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-// import { useRouter } from "next/router";
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -10,7 +9,7 @@ const client = contentful.createClient({
 });
 
 const BlogDetails = ({ blogs }) => {
-  const site = "https://willbowles.co/blog";
+  const site = "https://willbowles.co/blog/";
   const canonicalURL = site + blogs.fields.slug;
   return (
     <Layout>
